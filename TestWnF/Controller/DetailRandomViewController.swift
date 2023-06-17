@@ -21,11 +21,13 @@ class DetailRandomViewController: UIViewController {
     
     @IBOutlet weak var likeButton: UIButton!
     
-    @IBAction func backAction(_ sender: UIButton) {
+    // нажатие кнопки Назад
+    @IBAction func backAction(_ sender: CustomAnyButton) {
         dismiss(animated: true)
     }
     
-    @IBAction func likeAction(_ sender: UIButton) {
+    // нажатие кнопки Like
+    @IBAction func likeAction(_ sender: CustomAnyButton) {
         
         let liked = Liked()
         liked.user = user!
@@ -37,6 +39,8 @@ class DetailRandomViewController: UIViewController {
         try! AppDelegate.realm.write {
             AppDelegate.realm.add(liked)
         }
+        
+        dismiss(animated: true)
     }
     
     

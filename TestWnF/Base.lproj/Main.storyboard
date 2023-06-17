@@ -18,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="likedCell" id="css-Ks-hBW" customClass="FavoriteTableViewCell" customModule="TestWnF" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="40.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="likedCell" rowHeight="120" id="css-Ks-hBW" customClass="FavoriteTableViewCell" customModule="TestWnF" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="css-Ks-hBW" id="dwN-he-rEb">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="40.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-ju-Ufc">
-                                            <rect key="frame" x="30" y="0.0" width="40" height="40.333333333333336"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-ju-Ufc">
+                                            <rect key="frame" x="30" y="10" width="100" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="RKM-tt-q6L"/>
-                                                <constraint firstAttribute="width" constant="40" id="hbf-MD-V7T"/>
+                                                <constraint firstAttribute="height" constant="100" id="0h5-5y-ON0"/>
+                                                <constraint firstAttribute="width" constant="100" id="s74-az-VfS"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuL-UW-7Bz">
-                                            <rect key="frame" x="143" y="9.6666666666666643" width="200" height="21"/>
+                                            <rect key="frame" x="203" y="49.666666666666664" width="150" height="20.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="MGx-nS-kAf"/>
+                                                <constraint firstAttribute="width" constant="150" id="wOG-ev-QiE"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -44,10 +44,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kmq-ju-Ufc" firstAttribute="leading" secondItem="dwN-he-rEb" secondAttribute="leading" constant="30" id="0xC-EC-ho3"/>
-                                        <constraint firstItem="DuL-UW-7Bz" firstAttribute="centerY" secondItem="dwN-he-rEb" secondAttribute="centerY" id="40O-gx-aam"/>
-                                        <constraint firstItem="kmq-ju-Ufc" firstAttribute="top" secondItem="dwN-he-rEb" secondAttribute="top" id="4Lt-9H-PLw"/>
-                                        <constraint firstAttribute="trailing" secondItem="DuL-UW-7Bz" secondAttribute="trailing" constant="50" id="5jh-Kl-R7V"/>
-                                        <constraint firstAttribute="bottom" secondItem="kmq-ju-Ufc" secondAttribute="bottom" id="kDb-el-Fsh"/>
+                                        <constraint firstAttribute="bottom" secondItem="kmq-ju-Ufc" secondAttribute="bottom" constant="10" id="1ip-8q-66f"/>
+                                        <constraint firstItem="DuL-UW-7Bz" firstAttribute="centerY" secondItem="kmq-ju-Ufc" secondAttribute="centerY" id="2nP-Iw-pVz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DuL-UW-7Bz" secondAttribute="trailing" constant="20" id="Pcj-hQ-Q2l"/>
+                                        <constraint firstItem="kmq-ju-Ufc" firstAttribute="top" secondItem="dwN-he-rEb" secondAttribute="top" constant="10" id="QQ1-TT-c6K"/>
+                                        <constraint firstItem="DuL-UW-7Bz" firstAttribute="centerY" secondItem="dwN-he-rEb" secondAttribute="centerY" id="hGl-pC-3Sg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -56,6 +57,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="vTZ-8z-ZgA" id="MFY-LQ-WFT"/>
                             <outlet property="delegate" destination="vTZ-8z-ZgA" id="SW2-FE-5d8"/>
@@ -130,7 +132,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1N-TX-nII">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1N-TX-nII" customClass="CustomAnyButton" customModule="TestWnF" customModuleProvider="target">
                                 <rect key="frame" x="50.000000000000007" y="629" width="73.666666666666686" height="35"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +142,7 @@
                                     <action selector="dislikeAction:" destination="U6j-xr-TLt" eventType="touchUpInside" id="6QY-m7-lau"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74X-Hz-UDU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74X-Hz-UDU" customClass="CustomAnyButton" customModule="TestWnF" customModuleProvider="target">
                                 <rect key="frame" x="269.66666666666669" y="629" width="73.333333333333314" height="35"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,7 +314,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acY-Vp-poT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acY-Vp-poT" customClass="CustomAnyButton" customModule="TestWnF" customModuleProvider="target">
                                 <rect key="frame" x="159.66666666666666" y="649" width="74" height="35"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,7 +360,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXp-WP-CBp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXp-WP-CBp" customClass="CustomAnyButton" customModule="TestWnF" customModuleProvider="target">
                                 <rect key="frame" x="169" y="704" width="55" height="35"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

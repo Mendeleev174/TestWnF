@@ -21,6 +21,7 @@
 		63BE33AD2A38855300D2EAF6 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE33AC2A38855300D2EAF6 /* FavoriteTableViewController.swift */; };
 		63BE33AF2A38868800D2EAF6 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE33AE2A38868800D2EAF6 /* FavoriteTableViewCell.swift */; };
 		63BE33B12A389EAB00D2EAF6 /* DetailFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE33B02A389EAB00D2EAF6 /* DetailFavoriteViewController.swift */; };
+		63BE33B82A3CF09C00D2EAF6 /* CustomAnyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE33B72A3CF09C00D2EAF6 /* CustomAnyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		63BE33AC2A38855300D2EAF6 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		63BE33AE2A38868800D2EAF6 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		63BE33B02A389EAB00D2EAF6 /* DetailFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoriteViewController.swift; sourceTree = "<group>"; };
+		63BE33B72A3CF09C00D2EAF6 /* CustomAnyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomAnyButton.swift; path = TestWnF/View/CustomAnyButton.swift; sourceTree = SOURCE_ROOT; };
 		87E71B47AB4077DFB046E0E0 /* Pods-TestWnF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWnF.release.xcconfig"; path = "Target Support Files/Pods-TestWnF/Pods-TestWnF.release.xcconfig"; sourceTree = "<group>"; };
 		9326B794000244FA11426183 /* Pods-TestWnF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWnF.debug.xcconfig"; path = "Target Support Files/Pods-TestWnF/Pods-TestWnF.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,22 +79,47 @@
 		638AEF872A365D0500B4CCDB /* TestWnF */ = {
 			isa = PBXGroup;
 			children = (
+				63BE33B52A3CEE1A00D2EAF6 /* View */,
+				63BE33B42A3CEAB500D2EAF6 /* Controller */,
+				63BE33B22A3CEA6600D2EAF6 /* Model */,
 				638AEF882A365D0500B4CCDB /* AppDelegate.swift */,
 				638AEF8A2A365D0500B4CCDB /* SceneDelegate.swift */,
-				638AEF9C2A36652A00B4CCDB /* CollectionViewController.swift */,
-				638AEFA02A37081B00B4CCDB /* Connection.swift */,
-				638AEF9E2A36664900B4CCDB /* CollectionViewCell.swift */,
-				63BE33AA2A3878C500D2EAF6 /* Liked.swift */,
 				638AEF8E2A365D0500B4CCDB /* Main.storyboard */,
-				63BE33B02A389EAB00D2EAF6 /* DetailFavoriteViewController.swift */,
-				63BE33AE2A38868800D2EAF6 /* FavoriteTableViewCell.swift */,
-				63BE33AC2A38855300D2EAF6 /* FavoriteTableViewController.swift */,
-				638AEFCA2A38348300B4CCDB /* DetailRandomViewController.swift */,
 				638AEF912A365D0600B4CCDB /* Assets.xcassets */,
 				638AEF932A365D0600B4CCDB /* LaunchScreen.storyboard */,
 				638AEF962A365D0600B4CCDB /* Info.plist */,
 			);
 			path = TestWnF;
+			sourceTree = "<group>";
+		};
+		63BE33B22A3CEA6600D2EAF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				638AEFA02A37081B00B4CCDB /* Connection.swift */,
+				63BE33AA2A3878C500D2EAF6 /* Liked.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63BE33B42A3CEAB500D2EAF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				638AEF9C2A36652A00B4CCDB /* CollectionViewController.swift */,
+				63BE33AC2A38855300D2EAF6 /* FavoriteTableViewController.swift */,
+				638AEFCA2A38348300B4CCDB /* DetailRandomViewController.swift */,
+				63BE33B02A389EAB00D2EAF6 /* DetailFavoriteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63BE33B52A3CEE1A00D2EAF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				638AEF9E2A36664900B4CCDB /* CollectionViewCell.swift */,
+				63BE33AE2A38868800D2EAF6 /* FavoriteTableViewCell.swift */,
+				63BE33B72A3CF09C00D2EAF6 /* CustomAnyButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF4872357C20777B65DD1195 /* Frameworks */ = {
@@ -234,6 +261,7 @@
 				63BE33AF2A38868800D2EAF6 /* FavoriteTableViewCell.swift in Sources */,
 				63BE33AB2A3878C500D2EAF6 /* Liked.swift in Sources */,
 				638AEFA12A37081B00B4CCDB /* Connection.swift in Sources */,
+				63BE33B82A3CF09C00D2EAF6 /* CustomAnyButton.swift in Sources */,
 				638AEF9F2A36664900B4CCDB /* CollectionViewCell.swift in Sources */,
 				638AEF8B2A365D0500B4CCDB /* SceneDelegate.swift in Sources */,
 				63BE33B12A389EAB00D2EAF6 /* DetailFavoriteViewController.swift in Sources */,

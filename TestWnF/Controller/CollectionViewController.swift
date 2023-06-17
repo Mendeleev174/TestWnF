@@ -40,7 +40,7 @@ class CollectionViewController: UICollectionViewController {
     // количество элементов в секции
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        return 1
     }
 
     // заполнение элемента
@@ -56,6 +56,7 @@ class CollectionViewController: UICollectionViewController {
             connection.loadRandomId(to: cell)
         }
         
+        cell.layer.cornerRadius = 10
      
         return cell
     }

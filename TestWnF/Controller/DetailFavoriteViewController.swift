@@ -19,11 +19,13 @@ class DetailFavoriteViewController: UIViewController {
     
     @IBOutlet weak var picImageView: UIImageView!
     
-    @IBAction func backAction(_ sender: UIButton) {
+    // нажатие кнопки Назад
+    @IBAction func backAction(_ sender: CustomAnyButton) {
         dismiss(animated: true)
     }
     
-    @IBAction func dislikeAction(_ sender: UIButton) {
+    // нажатие кнопки Dislike
+    @IBAction func dislikeAction(_ sender: CustomAnyButton) {
         
         let realmObject = AppDelegate.realm.objects(Liked.self)
         try! AppDelegate.realm.write {
