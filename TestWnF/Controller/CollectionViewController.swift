@@ -55,8 +55,6 @@ class CollectionViewController: UICollectionViewController {
             let connection = Connection()
             connection.loadRandomId(to: cell)
         }
-        
-        cell.layer.cornerRadius = 10
      
         return cell
     }
@@ -82,6 +80,7 @@ class CollectionViewController: UICollectionViewController {
         addVC2.location = cell.location
         addVC2.downloads = cell.downloads
         addVC2.url = cell.url
+        addVC2.vcFromTabBarController = tabBarController?.viewControllers
         present(addVC2, animated: true)
     }
     

@@ -98,7 +98,6 @@ class Connection {
         Task { @MainActor in
             // получаем JPEG
             let (data, _) = try! await URLSession.shared.data(from: url)
-            cell.thumbImageView.layer.cornerRadius = 10
             cell.thumbImageView.image = UIImage(data: data)
         }
         

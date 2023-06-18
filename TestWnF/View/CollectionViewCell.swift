@@ -22,4 +22,7 @@ class CollectionViewCell: UICollectionViewCell {
     var downloads: Int?
     var url: String?
 
+    override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = 10
+    }
 }

@@ -40,6 +40,15 @@ class DetailRandomViewController: UIViewController {
             AppDelegate.realm.add(liked)
         }
         
+        if FavoriteTableViewController.isActive {
+            let fvc = vcFromTabBarController![1] as! FavoriteTableViewController
+            let indexPath = IndexPath(row: fvc.tableView.numberOfRows(inSection: 0), section: 0)
+            fvc.tableView.beginUpdates()
+            fvc.tableView.insertRows(at: [indexPath], with: .fade)
+            fvc.tableView.endUpdates()
+        }
+
+        
         dismiss(animated: true)
     }
     
@@ -50,6 +59,7 @@ class DetailRandomViewController: UIViewController {
     var location: String?
     var downloads: Int?
     var url: String?
+    var vcFromTabBarController: [UIViewController]?
     
     override func viewDidLoad() {
         super.viewDidLoad()

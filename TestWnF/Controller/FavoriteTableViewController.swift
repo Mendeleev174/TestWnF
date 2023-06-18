@@ -10,6 +10,8 @@ import RealmSwift
 
 class FavoriteTableViewController: UITableViewController {
 
+    static var isActive = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,7 @@ class FavoriteTableViewController: UITableViewController {
 //        let alert = UIAlertController(title: "Внимание!", message: "Таблица любимых фото пока не обновляется при добавлении новых!", preferredStyle: .alert)
 //        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
 //        present(alert, animated: true)
-        
+        FavoriteTableViewController.isActive = true
     }
 
     // MARK: - Table view data source
