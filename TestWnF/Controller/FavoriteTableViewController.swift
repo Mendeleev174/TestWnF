@@ -11,6 +11,7 @@ import RealmSwift
 class FavoriteTableViewController: UITableViewController {
 
     static var isActive = false
+    let connection = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,6 @@ class FavoriteTableViewController: UITableViewController {
             fatalError("Can't get link of the picture")
         }
         
-        let connection = Connection()
         connection.loadThumb(url: picURL, cell: cell)
         
         return cell

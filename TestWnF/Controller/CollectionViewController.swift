@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "cell"
 
 class CollectionViewController: UICollectionViewController {
+    
+    let connection = Connection()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,6 @@ class CollectionViewController: UICollectionViewController {
         
         // если ячейка пустая - загружаем в неё данные
         if cell.id == nil {
-            let connection = Connection()
             connection.loadRandomId(to: cell)
         }
      
