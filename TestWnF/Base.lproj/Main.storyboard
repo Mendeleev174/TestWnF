@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorite Unsplash-->
+        <!--Liked images-->
         <scene sceneID="egu-9N-YjJ">
             <objects>
                 <tableViewController id="vTZ-8z-ZgA" customClass="FavoriteTableViewController" customModule="TestWnF" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="vTZ-8z-ZgA" id="SW2-FE-5d8"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorite Unsplash" image="heart.circle.fill" catalog="system" id="Iwu-lS-47S"/>
+                    <tabBarItem key="tabBarItem" title="Liked images" image="heart.circle.fill" catalog="system" id="Iwu-lS-47S"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="116-VK-TgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

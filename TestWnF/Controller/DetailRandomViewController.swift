@@ -30,6 +30,7 @@ class DetailRandomViewController: UIViewController {
     @IBAction func likeAction(_ sender: CustomAnyButton) {
         
         let liked = Liked()
+        liked.id = id!
         liked.user = user!
         liked.creation_date = creation_date!
         liked.location = location
@@ -52,7 +53,7 @@ class DetailRandomViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
+    var id: String?
     var image: UIImage?
     var user: String?
     var creation_date: String?

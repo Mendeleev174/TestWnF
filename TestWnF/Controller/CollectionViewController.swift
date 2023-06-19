@@ -75,6 +75,7 @@ class CollectionViewController: UICollectionViewController {
         let addVC = storyboard?.instantiateViewController(withIdentifier: "detRanVC")
         let addVC2 = addVC as! DetailRandomViewController
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        addVC2.id = cell.id
         addVC2.image = cell.imageOfCell.image
         addVC2.user = cell.user
         addVC2.creation_date = cell.creation_date
