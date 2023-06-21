@@ -29,28 +29,34 @@ class DetailRandomViewController: UIViewController {
     // нажатие кнопки Like
     @IBAction func likeAction(_ sender: CustomAnyButton) {
         
-        let liked = Liked()
-        liked.id = id!
-        liked.user = user!
-        liked.creation_date = creation_date!
-        liked.location = location
-        liked.downloads = downloads!
-        liked.url = url!
-        
-        try! AppDelegate.realm.write {
-            AppDelegate.realm.add(liked)
+        if isMatch(idForMatching: id!) {
+            let alert = UIAlertController(title: "Внимание!", message: "Данное изображение уже находится в вашем списке избранных", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+        } else {
+            
+            let liked = Liked()
+            liked.id = id!
+            liked.user = user!
+            liked.creation_date = creation_date!
+            liked.location = location
+            liked.downloads = downloads!
+            liked.url = url!
+            
+            try! AppDelegate.realm.write {
+                AppDelegate.realm.add(liked)
+            }
+            
+            if FavoriteTableViewController.isActive {
+                let fvc = vcFromTabBarController![1] as! FavoriteTableViewController
+                let indexPath = IndexPath(row: fvc.tableView.numberOfRows(inSection: 0), section: 0)
+                fvc.tableView.beginUpdates()
+                fvc.tableView.insertRows(at: [indexPath], with: .fade)
+                fvc.tableView.endUpdates()
+            }
+            dismiss(animated: true)
         }
         
-        if FavoriteTableViewController.isActive {
-            let fvc = vcFromTabBarController![1] as! FavoriteTableViewController
-            let indexPath = IndexPath(row: fvc.tableView.numberOfRows(inSection: 0), section: 0)
-            fvc.tableView.beginUpdates()
-            fvc.tableView.insertRows(at: [indexPath], with: .fade)
-            fvc.tableView.endUpdates()
-        }
-
-        
-        dismiss(animated: true)
     }
     
     var id: String?
@@ -75,7 +81,17 @@ class DetailRandomViewController: UIViewController {
         
     }
     
-
+    // проверяем, есть ли в базе Realm подобное изображение
+    func isMatch(idForMatching id: String) -> Bool {
+        
+        let realmObject = AppDelegate.realm.objects(Liked.self)
+        let realmQuery = realmObject.where {
+            $0.id.contains(id)
+        }
+        guard realmQuery.isEmpty else { return true }
+        return false
+    }
+    
     /*
     // MARK: - Navigation
 

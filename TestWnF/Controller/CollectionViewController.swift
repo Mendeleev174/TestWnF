@@ -48,12 +48,12 @@ class CollectionViewController: UICollectionViewController {
     // заполнение элемента
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-
-        // зелёный фон пустого элемента
-        cell.imageOfCell.backgroundColor = .green
         
         // если ячейка пустая - загружаем в неё данные
         if cell.id == nil {
+            // зелёный фон пустого элемента
+            cell.imageOfCell.backgroundColor = .green
+            
             connection.loadRandomId(to: cell)
         }
      
