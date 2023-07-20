@@ -19,8 +19,34 @@ class CollectionViewController: UICollectionViewController {
         // путь к базе данных Realm
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
         // Do any additional setup after loading the view.
+        
+        view.addSubview(searchBarView)
+        setupLayout()
+        searchBarView.delegate = self
     }
 
+    // строка поиска
+    let searchBarView: UISearchBar = {
+        let sb = UISearchBar()
+        sb.translatesAutoresizingMaskIntoConstraints = false
+        sb.searchBarStyle = .default
+        sb.placeholder = "Search..."
+        sb.sizeToFit()
+        sb.isTranslucent = true
+        sb.showsCancelButton = false
+        return sb
+    }()
+    
+    // отступы строки поиска
+    func setupLayout() {
+        NSLayoutConstraint.activate([
+            searchBarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            searchBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            searchBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+        ])
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -108,4 +134,12 @@ class CollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension CollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        print(searchBar.text!)
+    }
 }
